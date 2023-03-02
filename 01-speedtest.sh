@@ -7,18 +7,6 @@ _red() {
     printf '\033[0;31;31m%b\033[0m' "$1"
 }
 
-_green() {
-    printf '\033[0;31;32m%b\033[0m' "$1"
-}
-
-_yellow() {
-    printf '\033[0;31;33m%b\033[0m' "$1"
-}
-
-_blue() {
-    printf '\033[0;31;36m%b\033[0m' "$1"
-}
-
 _exit() {
     _red "\nThe script has been terminated.\n"
     rm -fr speedtest-cli
@@ -45,7 +33,7 @@ speed_test() {
         local latency=$(awk '/Latency/{print $2" "$3}' ./speedtest-cli/speedtest.log)
         local url=$(awk '/Result/{print $3}' ./speedtest-cli/speedtest.log)
         if [[ -n "${dl_speed}" && -n "${up_speed}" && -n "${latency}" && -n "${url}" ]]; then
-            printf "%-26s%-18s%-18s%-12s%-12s\n" " ${nodeName}" "${up_speed}" "${dl_speed}" "${latency}" "${url}"
+            printf "%-28s%-18s%-18s%-12s%-12s\n" " ${nodeName}" "${up_speed}" "${dl_speed}" "${latency}" "${url}"
         fi
     fi
 }
@@ -136,7 +124,7 @@ install_speedtest() {
         mkdir -p speedtest-cli && tar zxf speedtest.tgz -C ./speedtest-cli && chmod +x ./speedtest-cli/speedtest
         rm -f speedtest.tgz
     fi
-    printf "%-26s%-18s%-18s%-12s%-12s\n" " Node Name" "Upload Speed" "Download Speed" "Latency" "Result"
+    printf "%-28s%-18s%-18s%-12s%-12s\n" " Node Name" "Upload Speed" "Download Speed" "Latency" "Result"
 }
 
 install_speedtest && speed && rm -fr speedtest-cli
