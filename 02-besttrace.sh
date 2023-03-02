@@ -30,6 +30,7 @@ trace() {
 	besttrace_test '61.64.127.1' 'TW, SoNET'
 	besttrace_test '219.87.66.1' 'TW, TFN'
 	besttrace_test '103.31.196.1' 'TW,TAIFO'
+	besttrace_test '123.195.236.110' 'TW,Kbro'
     besttrace_test '219.141.147.210' '北京电信'
     besttrace_test '202.96.209.133' '上海电信'
     besttrace_test '58.60.188.222' '深圳电信'
