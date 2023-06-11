@@ -25,7 +25,7 @@ besttrace_test() {
 
 trace() {
 	besttrace_test '168.95.1.1' 'TW, Hinet'
-	besttrace_test '139.175.1.1' 'TW, FETNet'
+	besttrace_test '139.175.1.254' 'TW, FETNet'
 	besttrace_test '203.79.224.10' 'TW, APTG'
 	besttrace_test '61.64.127.1' 'TW, SoNET'
 	besttrace_test '219.87.66.1' 'TW, TFN'
